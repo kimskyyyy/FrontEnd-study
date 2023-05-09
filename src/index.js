@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// Library 컴포넌트를 가져옴 
-import Library from './chapter_03/Library';
 
 // Clock 컴포넌트를 가져옴
-import Clock from './chapter_04/Clock';
+// import Clock from './chapter_04/Clock';
+
+// Comment 컴포넌트를 가져옴
+import CommentList from './chapter_05/CommentList';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -17,14 +18,23 @@ import Clock from './chapter_04/Clock';
 //   </React.StrictMode>
 // );
 
-setInterval( () => {
-  ReactDOM.render(
-    <React.StrictMode>
-      <Clock />
-      </React.StrictMode>,
-      document.getElementById('root')
-  );
-}, 1000);
+// setInterval( () => {
+//   ReactDOM.render(
+//     <React.StrictMode>
+//       <Clock />
+//       </React.StrictMode>,
+//       document.getElementById('root')
+//   );
+// }, 1000);
+
+
+ReactDOM.render(
+  <React.StrictMode>
+      <CommentList />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
 
 
 
