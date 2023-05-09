@@ -9,7 +9,10 @@ import reportWebVitals from './reportWebVitals';
 // import Clock from './chapter_04/Clock';
 
 // Comment 컴포넌트를 가져옴
-import CommentList from './chapter_05/CommentList';
+// import CommentList from './chapter_05/CommentList';
+
+// Notification 컴포넌트를 가져옴
+import NotificationList from './chapter_06/NotificationList';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -30,7 +33,7 @@ import CommentList from './chapter_05/CommentList';
 
 ReactDOM.render(
   <React.StrictMode>
-      <CommentList />
+      <NotificationList />
   </React.StrictMode>,
   document.getElementById('root')
 );
