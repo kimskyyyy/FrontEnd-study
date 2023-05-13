@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -16,19 +16,34 @@ import reportWebVitals from './reportWebVitals';
 // import NotificationList from './chapter_06/NotificationList';
 
 // Accommodate 컴포넌트를 가져옴
-import Accommodate from './chapter_07/Accommodate';
+// import Accommodate from './chapter_07/Accommodate';
+
+// ConfirmButton1 컴포넌트를 가져옴
+// import ConfirmButton1 from './chapter_08/ConfirmButton1';
+
+// ConfirmButton2 컴포넌트를 가져옴
+// import ConfirmButton2 from './chapter_08/ConfirmButton2';
+
+// ConfirmButton3 컴포넌트를 가져옴
+import ConfirmButton3 from './chapter_08/ConfirmButton3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <BrowserRouter>
-      <App />
-    </BrowserRouter> */}
-    
+    <BrowserRouter>
+    {/* <App />*/}
     {/* <Library /> */}
     {/* <CommentList /> */}
     {/* <NotificationList /> */}
-    <Accommodate />
+    {/* <Accommodate /> */}
+    {/* <ConfirmButton1 /> */}
+    {/* <ConfirmButton2 /> */}
+    <ConfirmButton3 />
+
+
+
+
+    </BrowserRouter> 
 
 
 
