@@ -25,7 +25,12 @@ import reportWebVitals from './reportWebVitals';
 // import ConfirmButton2 from './chapter_08/ConfirmButton2';
 
 // ConfirmButton3 컴포넌트를 가져옴
-import ConfirmButton3 from './chapter_08/ConfirmButton3';
+// import ConfirmButton3 from './chapter_08/ConfirmButton3';
+
+// LandingPage 컴포넌트를 가져옴
+// import LandingPage from './chapter_09/LandingPage';
+
+import LoginControl from './chapter_09/LoginControl';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,7 +43,9 @@ root.render(
     {/* <Accommodate /> */}
     {/* <ConfirmButton1 /> */}
     {/* <ConfirmButton2 /> */}
-    <ConfirmButton3 />
+    {/* <ConfirmButton3 />*/}
+    {/* <LandingPage /> */}
+    <LoginControl />
 
 
 
