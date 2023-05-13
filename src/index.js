@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from 'react-router-dom'
 import './index.css';
-// import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -12,14 +13,22 @@ import reportWebVitals from './reportWebVitals';
 // import CommentList from './chapter_05/CommentList';
 
 // Notification 컴포넌트를 가져옴
-import NotificationList from './chapter_06/NotificationList';
+// import NotificationList from './chapter_06/NotificationList';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <Library />
-//   </React.StrictMode>
-// );
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+    
+    {/* <Library /> */}
+    {/* <CommentList /> */}
+    {/* <NotificationList /> */}
+
+
+  </React.StrictMode>
+);
 
 // setInterval( () => {
 //   ReactDOM.render(
@@ -29,15 +38,6 @@ import NotificationList from './chapter_06/NotificationList';
 //       document.getElementById('root')
 //   );
 // }, 1000);
-
-
-ReactDOM.render(
-  <React.StrictMode>
-      <NotificationList />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
 
 
 
