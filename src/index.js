@@ -32,7 +32,9 @@ import reportWebVitals from './reportWebVitals';
 
 // import LoginControl from './chapter_09/LoginControl';
 
-import AttendanceBook from './chapter_10/AttendanceBook';
+// import AttendanceBook from './chapter_10/AttendanceBook';
+
+import NumberList from './chapter_10/NumberList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -40,6 +42,7 @@ root.render(
     {/* <BrowserRouter> */}
     {/* <App />*/}
     {/* </BrowserRouter>  */}
+
     {/* <Library /> */}
     {/* <CommentList /> */}
     {/* <NotificationList /> */}
@@ -49,7 +52,8 @@ root.render(
     {/* <ConfirmButton3 />*/}
     {/* <LandingPage /> */}
     {/* <LoginControl /> */}
-    <AttendanceBook />
+    {/* <AttendanceBook /> */}
+    <NumberList />
 
 
 
