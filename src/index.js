@@ -34,7 +34,9 @@ import reportWebVitals from './reportWebVitals';
 
 // import AttendanceBook from './chapter_10/AttendanceBook';
 
-import NumberList from './chapter_10/NumberList';
+// import NumberList from './chapter_10/NumberList';
+
+import SignUp from './chapter_11/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -53,7 +55,8 @@ root.render(
     {/* <LandingPage /> */}
     {/* <LoginControl /> */}
     {/* <AttendanceBook /> */}
-    <NumberList />
+    {/* <NumberList /> */}
+    <SignUp />
 
 
 
