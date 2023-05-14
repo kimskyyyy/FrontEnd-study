@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom'
+// import {BrowserRouter} from 'react-router-dom'
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -30,13 +30,16 @@ import reportWebVitals from './reportWebVitals';
 // LandingPage 컴포넌트를 가져옴
 // import LandingPage from './chapter_09/LandingPage';
 
-import LoginControl from './chapter_09/LoginControl';
+// import LoginControl from './chapter_09/LoginControl';
+
+import AttendanceBook from './chapter_10/AttendanceBook';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
     {/* <App />*/}
+    {/* </BrowserRouter>  */}
     {/* <Library /> */}
     {/* <CommentList /> */}
     {/* <NotificationList /> */}
@@ -45,12 +48,13 @@ root.render(
     {/* <ConfirmButton2 /> */}
     {/* <ConfirmButton3 />*/}
     {/* <LandingPage /> */}
-    <LoginControl />
+    {/* <LoginControl /> */}
+    <AttendanceBook />
 
 
 
 
-    </BrowserRouter> 
+
 
 
 
