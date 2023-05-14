@@ -38,7 +38,11 @@ import reportWebVitals from './reportWebVitals';
 
 // import SignUp from './chapter_11/SignUp';
 
-import Calculator from './chapter_12/Calculator';
+// import Calculator from './chapter_12/Calculator';
+
+import ProfileCard from './chapter_13/ProfileCard';
+import WelcomDialog from './chapter_13/WelcomDialog';
+import SignUpDialog from './chapter_13/SignUpDialog';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -59,7 +63,10 @@ root.render(
     {/* <AttendanceBook /> */}
     {/* <NumberList /> */}
     {/* <SignUp /> */}
-    <Calculator />
+    {/* <Calculator /> */}
+    <ProfileCard />
+    <WelcomDialog />
+    <SignUpDialog />
 
 
 
