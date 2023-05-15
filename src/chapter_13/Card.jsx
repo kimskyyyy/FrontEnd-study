@@ -11,7 +11,9 @@ function Card(props) {
                 backgroundColor: backgroundColor || "white",
             }}
         >
+            {/* Specialization 합성방법*/}
             {title && <h1>{title}</h1>}
+            {/* Containment 합성방법*/}
             {children}
         </div>
     );

@@ -40,9 +40,13 @@ import reportWebVitals from './reportWebVitals';
 
 // import Calculator from './chapter_12/Calculator';
 
-import ProfileCard from './chapter_13/ProfileCard';
-import WelcomDialog from './chapter_13/WelcomDialog';
-import SignUpDialog from './chapter_13/SignUpDialog';
+// import ProfileCard from './chapter_13/ProfileCard';
+// import WelcomDialog from './chapter_13/WelcomDialog';
+// import SignUpDialog from './chapter_13/SignUpDialog';
+
+// import DarkOrLight from './chapter_14/DarkOrLight';
+
+import Blocks from './chapter_15/Bolcks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -64,9 +68,12 @@ root.render(
     {/* <NumberList /> */}
     {/* <SignUp /> */}
     {/* <Calculator /> */}
-    <ProfileCard />
+    {/* <ProfileCard />
     <WelcomDialog />
-    <SignUpDialog />
+    <SignUpDialog /> */}
+    {/* <DarkOrLight /> */}
+    <Blocks />
+
 
 
 
