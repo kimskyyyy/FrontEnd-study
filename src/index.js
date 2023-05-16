@@ -46,7 +46,7 @@ import reportWebVitals from './reportWebVitals';
 
 // import DarkOrLight from './chapter_14/DarkOrLight';
 
-import Blocks from './chapter_15/Bolcks';
+import Blocks from './chapter_15/Blocks';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
