@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // import {BrowserRouter} from 'react-router-dom'
 import './index.css';
-import App from './App';
+// import App from './App'; 
 import reportWebVitals from './reportWebVitals';
 
 
@@ -46,6 +46,8 @@ import reportWebVitals from './reportWebVitals';
 
 // import DarkOrLight from './chapter_14/DarkOrLight';
 
+import ReduxApp from './redux/ReduxApp';
+
 import Blocks from './chapter_15/Blocks';
 import MainPage from './chapter_15/MainPage';
 
@@ -75,8 +77,8 @@ root.render(
     {/* <DarkOrLight /> */}
     {/* <Blocks />
     <MainPage /> */}
-    <App />
-
+    {/* <App /> */}
+    <ReduxApp />
 
 
 
