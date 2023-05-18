@@ -46,10 +46,14 @@ import reportWebVitals from './reportWebVitals';
 
 // import DarkOrLight from './chapter_14/DarkOrLight';
 
-import ReduxApp from './redux/ReduxApp';
+import ReduxApp from './beforeRedux/ReduxApp';
 
-import Blocks from './chapter_15/Blocks';
-import MainPage from './chapter_15/MainPage';
+
+// import {Provider} from 'react-redux';
+// import store from './beforRedux/store';
+
+// import Blocks from './chapter_15/Blocks';
+// import MainPage from './chapter_15/MainPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -78,7 +82,12 @@ root.render(
     {/* <Blocks />
     <MainPage /> */}
     {/* <App /> */}
+    {/* <Provider store={store}>
     <ReduxApp />
+    </Provider> */}
+
+    <ReduxApp />
+
 
 
 
