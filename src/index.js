@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {BrowserRouter} from 'react-router-dom'
 import './index.css';
-// import App from './App'; 
 import reportWebVitals from './reportWebVitals';
+// import { Provider } from 'react-redux';
+// import store from './store';
+
+// import {BrowserRouter} from 'react-router-dom'
+// import App from './App'; 
 
 
 // Clock 컴포넌트를 가져옴
@@ -48,7 +51,9 @@ import reportWebVitals from './reportWebVitals';
 
 // import ReduxApp from './beforeRedux/ReduxApp';
 // import ReduxApp from './afterRedux/ReduxApp';
-  import ReduxApp from './react_Redux/ReduxApp';
+  // import ReduxApp from './react_Redux/ReduxApp';
+  
+import App from './react_ajax/App';
 
 
 // import {Provider} from 'react-redux';
@@ -87,9 +92,11 @@ root.render(
     {/* <Provider store={store}>
     <ReduxApp />
     </Provider> */}
-    <Provider store={store}>
+    {/* <Provider store={store}>
       <ReduxApp />
-    </Provider>
+    </Provider> */}
+
+    <App />
     
 
 
