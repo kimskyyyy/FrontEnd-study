@@ -2,8 +2,9 @@ import AddNumber from "../components/AddNumber";
 import React, {Component} from "react";
 import store from "../store";
 
+
 /*
-* AddNumber 컴포넌트를 감쌀 컨테이너인 래퍼 컨포넌트 생성
+* AddNumber 컴포넌트를 감쌀 컨테이너인 래퍼 컨포넌트 생성(익명 컴포넌트)
 */
 export default class extends Component {
     render() {

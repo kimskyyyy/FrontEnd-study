@@ -7,8 +7,8 @@ export default class DisplayNumberRoot extends Component{
         return (
             <div>
                 <h1>Display Number Root</h1>
-                <DisplayNumber unit="kg"></DisplayNumber>
-                
+                <DisplayNumber number={this.props.number} unit="kg"></DisplayNumber>
+
                 {/* // Redux 적용 전, props로 전달됐던 이벤트 함수와 값 삭제
                 <DisplayNumber number={this.props.number}></DisplayNumber> */}
                 

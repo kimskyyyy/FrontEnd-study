@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+// import store from "../store";
 
 // 값을 입력하고 버튼을 누르는 부분인 AddNumber 컴포넌트
 export default class AddNumber extends Component {
@@ -9,6 +10,7 @@ export default class AddNumber extends Component {
             <div>
             <h1>Add Number</h1>
             <input type="button" value="+" onClick={function() {
+                // store.dispatch({type:'INCREMENT', size:this.state.size});
                 this.props.onClick(this.state.size);
             }.bind(this)}>   
             </input>
