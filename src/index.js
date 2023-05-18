@@ -46,7 +46,9 @@ import reportWebVitals from './reportWebVitals';
 
 // import DarkOrLight from './chapter_14/DarkOrLight';
 
-import ReduxApp from './beforeRedux/ReduxApp';
+// import ReduxApp from './beforeRedux/ReduxApp';
+// import ReduxApp from './afterRedux/ReduxApp';
+  import ReduxApp from './react_Redux/ReduxApp';
 
 
 // import {Provider} from 'react-redux';
@@ -85,8 +87,10 @@ root.render(
     {/* <Provider store={store}>
     <ReduxApp />
     </Provider> */}
-
-    <ReduxApp />
+    <Provider store={store}>
+      <ReduxApp />
+    </Provider>
+    
 
 
 
