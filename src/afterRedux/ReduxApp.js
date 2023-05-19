@@ -7,7 +7,7 @@ import DisplayNumberRoot from "./components/DisplayNumberRoot";
 
 
 class ReduxApp extends Component {
-    state = {number:0}
+    // state = {number:0}
     render() {
         return (
             <div className="ReduxApp">
