@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+</body>
+<script>
+// Q1. 변수 만들기
+let age = 30;
+const hometown = 'chuncheon';
+
+
+// Q2. 변수 동작
+var name = 'sky';
+var id = 0;
+
+function showName() {
+    var name = 'dol';
+    var id = 1;
+    console.log(name);
+    console.log(id);
+}
+
+showName();
+console.log(name);
+console.log(id);
+
+// Q3. 이자율 계산하기
+// 예금액이 50000원 미만이면 연 15%이율 그 이상이면 연 20%이율
+var 예금액 = 60000;
+var 미래예금액 = 0;
+
+if(예금액 < 50000) {
+    미래예금액 = (예금액 * 1.15) * 1.15;
+} else {
+    미래예금액 = (예금액 * 1.20) * 1.20;
+}
+
+console.log(미래예금액);
+
+// Q3-1. 이자율 계산 응용
+var 응용예금액 = 60000;
+var 응용미래예금액 = 0;
+
+if(예금액 < 50000) {
+    응용미래예금액 = 예금액 ** 1.15;
+} else {
+    응용미래예금액 = 예금액 ** 1.20;
+}
+
+console.log(응용미래예금액);
+
+
+// Q4. 커피 리필
+// 방금 마신 커피의 3분의 2만큼 총 2번 리필해주는 카페가 있습니다.
+// 예를 들면 처음 커피를 90ml 주문하면 첫 리필은 60ml를 해주며, 그 다음 리필은 40ml를 해주는 카페입니다.
+// 그럼 처음 주문한 커피 양에 따라서 최대한 마실 수 있는 커피를 콘솔창에 계산해주는 코드를 작성해봅시다. 
+
+var first = 360;
+var full = 0;
+
+full = first + first * (2 / 3) + first * (2 / 3) * (2 / 3);
+
+// Q4-1. 커피리필 
+</script>
+
+<!-- Q5. 퀴즈 UI -->
+<p>태조 이성계가 태어난 년도는?</p>
+<input type="text" id="answer">
+<button type="submit" id="send">제출</button>
+
+<script>
+    let cnt = 0;
+
+    $('#send').on('click', function() {  
+        cnt += 1;
+        let answer = document.querySelector('#answer').value;
+        console.log(answer);
+        
+        if(answer == '1335') {
+            alert('성공')
+        } else if(cnt >= 3 && answer != '1335') {
+            alert('바부')
+        }
+            
+    });
+
+</script>
+    
+
+</html>
+
