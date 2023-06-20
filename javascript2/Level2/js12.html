@@ -189,16 +189,16 @@
     <script>
         // 로그인 모달 보이기
 
-        // 방법 1 ???
-        document.getElementById('login').addEventListener('click', function() {
-            console.log('클릭 확인');
-          document.querySelector('.black-bg').classList.add('show-modal');
-        })
+        // 방법 1 
+        // document.getElementById('login').addEventListener('click', function() {
+        //     console.log('클릭 확인');
+        //   document.querySelector('.black-bg').classList.add('show-modal');
+        // });
 
-        // 방법 1 닫기
-        document.querySelector('.black-bg').addEventListener('click', function() {
-            document.querySelector('.black-bg').classList.remove('show-modal');
-        })
+        // // 방법 1 닫기
+        // document.querySelector('.black-bg').addEventListener('click', function() {
+        //     document.querySelector('.black-bg').classList.remove('show-modal');
+        // })
 
         // 방법 2 jquery + querySelector
         // $('#login').on('click', function() {
@@ -206,19 +206,19 @@
         // })
 
         // 방법 3 jquery
-        // $('#login').on('click', function() {
-        //     $('.black-bg').addClass('show-modal');
-        // })
+        $('#login').on('click', function() {
+            $('.black-bg').addClass('show-modal');
+        });
 
         // 로그인 모달-[닫기] 
-        // $('#close').on('click', function() {
-        //     $('.black-bg').removeClass('show-modal');
-        // })
+        $('#close').on('click', function() {
+            $('.black-bg').removeClass('show-modal');
+        });
 
         // 검정색 배경 클릭 시 로그인 모달창 닫기
-        // $('.black-bg').on('click', function() {
-        //     $('.black-bg').removeClass('show-modal');
-        // })
+        $('.black-bg').on('click', function() {
+            $('.black-bg').removeClass('show-modal');
+        });
         
 
         // 로그인 모달-[전송]
