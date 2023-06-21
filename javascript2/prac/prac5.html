@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link href="/javascript2/main.css" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+
+   
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+<script>
+//  array, for 반복문 실력 향상 과제
+
+
+// Q1. Array에서 철수라는 자료 찾기
+// 1. 함수안에 파라미터로 이름을 집어넣기
+// 2. 출석부에 이름이 있으면 콘솔창에 출력해주기
+
+var 출석부 = ['흥민', '영희', '철수', '재석', '철수'];
+
+function 이름찾기(name) {
+    for(var i = 0; i < 출석부.length; i++) {
+        if(출석부[i] == name) {
+            console.log('있어용');
+        }
+    }
+}
+
+
+// Q2. 구구단 출력
+function 구구단() {
+    for(var i = 2; i < 10; i++) {
+        for(var j = 1; j < 10; j++) {
+            console.log(i * j);
+        }
+    }
+}
+
+// Q3. 평균 점수 계산기 만들기
+function 평점계산기(arr, 현재) {
+    var sum = 0;
+    var avg = 0;
+    var score = 0;
+
+    arr.forEach(function(item) {
+        sum += item;
+    });
+    avg = sum / arr.length;
+
+    if(현재 > avg) {
+        score = 현재 - avg;
+        console.log(`평균보다 ${score} 올랐네요`);
+        return `평균보다 ${score} 올랐네요`;
+    } else {
+        score = avg - 현재;
+        console.log(`평균보다 ${score} 떨어졌네용 재수 추천!!!!!`);
+        return `평균보다 ${score} 떨어졌네용 재수 추천!!!!!`;
+    }
+
+}
+
+평점계산기([10, 20, 30, 40, 50], 40);
+
+
+</script>
+
+</html>
