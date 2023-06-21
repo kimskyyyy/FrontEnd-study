@@ -17,11 +17,39 @@
     </head>
 
     <body>
+        <!-- 상품 가격 div -->
+        <div class="container mt-3" >
+            <div class="card p-3">
+                <span class="car-title">상품명</span>
+                <span class="car-price">가격</span>
+            </div>
+        </div>
+        
+        <script>
+            var car =['소나타', 50000, 'white'];
+            console.log(car[0]);
+
+            var car2 = {name: '소나타', price: [50000, 3000, 4000]}
+
+            // 변수 넣기 불가
+            document.querySelector('.car-title').innerHTML = car2.name;
+            document.querySelector('.car-price').innerHTML = car2.price[0];
+
+            // 변수 넣기 가능
+            // document.querySelector('.car-title').innerHTML = car2['name'];
+            // document.querySelector('.car-price').innerHTML = car2['price'];
+
+        </script>
+
+
+
+        <!-- tab-->
         <div class="container mt-5">
             <ul class="list">
-                <li class="tab-button">Products</li>
-                <li class="tab-button orange">Information</li>
-                <li class="tab-button">Shipping</li>
+                <!-- html태그에 몰래 정보 숨기기 data-자료이름="값" -->
+                <li class="tab-button" data-id="0">Products</li>
+                <li class="tab-button orange" data-id="1">Information</li>
+                <li class="tab-button" data-id="2">Shipping</li>
             </ul>
 
             <div class="tab-content">
