@@ -92,8 +92,9 @@
 
         // GET 요청
         $.get('https://codingapple1.github.io/price.json')
+        //$.get(): // 받아온 JSON을 Object로 자동 변환 해줌
         // 서버와 클라이언트는 문자 자료만 주고 받을 수 있음
-        // object, array 를 보내고 싶은 경우 큰따옴표로 문자처럼 만들어서 전송
+        // object, array 를 보내고 싶은 경우 JSON형식으로(큰따옴표로 문자처럼 만들어서) 전송
         .done(function(data) {
             console.log(data);
             console.log(data.price)
@@ -106,7 +107,7 @@
 
         // 브라우저 기본함수 fetch 사용
         fetch('https://codingapple1.github.io/price.json')
-            // 받아온 JSON을 Object로 변환
+            // 받아온 JSON을 Object로 변환(일반 문자 사용할 경우 삭제)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
