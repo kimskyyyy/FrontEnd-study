@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link href="main.css" rel="stylesheet">
+    
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    
+    
+        <title>Hello, world!</title>
+      </head>
+
+<body class="main">
+
+    <!-- 로그인 모달 -->
+    <div class="black-bg">
+        <div class="white-bg">
+          <h4>로그인하세요</h4>
+
+          <form action="/javascript2/success.html">
+            <div class="inputId">
+              <input type="text" class="form-control" id="email">
+             </div>
+             <div class="inputPw">
+               <input type="password" class="form-control" id="password">
+             </div>
+             <button type="submit" class="btn btn-primary" id="send">전송</button>
+             <button type="button" class="btn btn-danger" id="close">닫기</button>
+          </form> 
+        </div>
+    </div>
+
+
+
+    <!-- nav bar  -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+          <span class="navbar-brand">Navbar</span>
+          <span class="badge bg-dark">Dark 🔄</span>
+          <button class="navbar-toggler" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav> 
+
+    <ul class="list-group" id="test1">
+        <li class="list-group-item">An item</li>
+        <li class="list-group-item">A second item</li>
+        <li class="list-group-item">A third item</li>
+        <li class="list-group-item">A fourth item</li>
+        <li class="list-group-item">And a fifth one</li>
+    </ul>
+    <script>
+         // nav bar list 보이기/안보이기
+         document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', function() {
+            // 버튼을 누르면 <ui>에 show 부착하기
+            document.getElementsByClassName('list-group')[0].classList.toggle('show');
+        })
+    </script>
+
+    <script>
+
+        // 스크롤바 내리면 로고 폰트 작게 만들기
+        $(window).on('scroll', function() {
+            if($(window).scrollTop() >= 100) {
+                $('.navbar-brand').css('font-size', '10px');
+            } else if($(window).scrollTop() < 100) {
+                $('.navbar-brand').css('font-size', '20px');
+            }
+        });
+    </script>
+
+
+
+    <div class="main-bg">
+        <h4>sky</h4>
+        <!-- 로그인 버튼 -->
+        <button id="login" class="btn btn-danger">로그인</button>
+    </div>
+
+    <div class="alert1 alert-danger">
+        5초 이내 구매시 사은품 증정
+    </div>
+    <script>
+        setTimeout(function(){
+            $('.alert1').hide();
+        }, 5000)
+    </script>
+    </div>
+
+    <!-- carousel 이미지 슬라이드 -->
+    <div style="overflow: hidden">
+        <div class="slide-container">
+            <div class="slide-box">
+                <!-- draggable옵션: 드래그&이동 설정 -->
+                <img src="/javascript2/image/candy.png" draggable="false">
+            </div>  
+            <div class="slide-box">
+                <img src="/javascript2/image/car.png">
+            </div>  
+            <div class="slide-box">
+                <img src="/javascript2/image/sleep.png">
+            </div>        
+        </div>
+    </div>
+
+    <!-- 기능1. 내가 드래그한 거리만큼 박스도 왼쪽으로 움직임  -->
+    <!-- 기능2. 100px이상 드래그 해서 마우스 놓으면 다음 사진으로 이동 -->
+    <script>
+        var 시작좌표 = 0;
+        var 종료좌표 = 0;
+        var 마우스클릭 = false;
+
+        $('.slide-box').eq(0).on('mousedown', function(e) {
+            시작좌표 = e.clientX;
+            console.log(시작좌표);
+
+            마우스클릭 = true;
+        });
+
+        $('.slide-box').eq(0).on('mousemove', function(e) {
+            이동좌표 = e.clientX - 시작좌표;
+            console.log(이동좌표);
+            
+            if(마우스클릭 == true) {
+                $('.slide-container').css('transform', `translateX(${이동좌표}px)`)
+            }
+        });
+
+        $('.slide-box').eq(0).on('mouseup', function(e) {
+            마우스클릭 = false;
+
+            if(이동좌표 <= -100) {
+                $('.slide-container')
+                // 서서히 변하는 효과
+                .css('transform', 'all 0.5s')
+                .css('transform', `translateX(-100vw)`)
+            } else {
+                $('.slide-container')
+                .css('transform', 'all 0.5s')
+                .css('transform', `translateX(0vw)`)
+            }
+
+            setTimeout(() => {
+                $('.slide-container').css('transition', 'none')
+            }, 500)
+            
+        })
+
+
+
+        // 모바일용 터치 이벤트
+        $('.slide-box').eq(0).on('touchstart', function(e) {
+            // 터치이벤트에서 x좌표 출력: e.touches
+            시작좌표 = e.touches[0].clientX;
+            console.log(시작좌표);
+
+            마우스클릭 = true;
+        });
+
+        $('.slide-box').eq(0).on('touchmove', function(e) {
+            이동좌표 = e.touches[0].clientX - 시작좌표;
+            console.log(이동좌표);
+            
+            if(마우스클릭 == true) {
+                $('.slide-container').css('transform', `translateX(${이동좌표}px)`)
+            }
+        });
+
+        $('.slide-box').eq(0).on('touchend', function(e) {
+            마우스클릭 = false;
+
+            if(e.changedToucheds[0] <= -100) {
+                $('.slide-container')
+                // 서서히 변하는 효과
+                .css('transform', 'all 0.5s')
+                .css('transform', `translateX(-100vw)`)
+            } else {
+                $('.slide-container')
+                .css('transform', 'all 0.5s')
+                .css('transform', `translateX(0vw)`)
+            }
+
+            setTimeout(() => {
+                $('.slide-container').css('transition', 'none')
+            }, 500)
+            
+
+        })
+    </script>
+
+    <button class="pre-btn">이전</button>
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+    <button class="next-btn">다음</button>
+    <script>
+        let current = 1;
+
+        $('.pre-btn').on('click', function() {
+            if(current == 1) {
+                $('.slide-container').css('transform', 'translateX(-200vw)');
+                current = 3;
+            } else if(current == 2) {
+                $('.slide-container').css('transform', 'translateX(0vw)');
+                current -= 1;
+            } else if(current == 3) {
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                current -= 1;
+            }
+        })
+
+        $('.slide-1').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(0vw)');
+            current = 1;
+        })
+
+        $('.slide-2').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            current = 2;
+        })
+
+        $('.slide-3').on('click', function() {
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+            current = 3;
+        })
+
+        $('.next-btn').on('click', function() {
+            if(current == 1) {
+                $('.slide-container').css('transform', 'translateX(-100vw)');
+                current += 1;
+            } else if(current == 2) {
+                $('.slide-container').css('transform', 'translateX(-200vw)');
+                current += 1;
+            } else if(current == 3) {
+                $('.slide-container').css('transform', 'translateX(0vw)');
+                current = 1;
+            }
+        })
+    </script>
+
+
+     
+
+    <script>
+        // 로그인 모달 보이기
+
+        // 방법 1 
+        document.getElementById('login').addEventListener('click', function() {
+            console.log('클릭 확인');
+          document.querySelector('.black-bg').classList.add('show-modal');
+        });
+
+        // // 방법 1 닫기
+        document.querySelector('.black-bg').addEventListener('click', function(e) {
+
+            // // 유저가 실제로 클릭한 것(이벤트 발생한 곳)
+            e.target;
+            console.log(e.target);
+
+            // // 이벤트 리스너 달린 곳 확인하는 2가지 방법
+            // e.currentTarget;
+            // this;
+
+            // // 이벤트 기본 동작 막아줌
+            // e.preventDefault();
+
+            // // 내 상위요소로 이벤트 버블링 막아줌
+            // e.stopPropagation();
+
+            
+
+            if(e.target == document.querySelector('.black-bg')) {
+                document.querySelector('.black-bg').classList.remove('show-modal');
+            }
+
+            // jquery로 표현 하기 1
+            // if($(e.target) == $('.black-bg')) {
+            //     document.querySelector('.black-bg').classList.remove('show-modal');
+            // }
+
+            // jquery로 표현 하기 2(권장 방법)
+            // if($(e.target).is($('.black-bg'))) {
+            //     document.querySelector('.black-bg').classList.remove('show-modal');
+            // }
+
+
+            
+        })
+
+        // 방법 2 jquery + querySelector
+        // $('#login').on('click', function() {
+        //     document.querySelector('.black-bg').classList.add('show-modal');
+        // })
+
+        // 방법 3 jquery
+        // $('#login').on('click', function() {
+        //     $('.black-bg').addClass('show-modal');
+        // });
+
+        // 로그인 모달-[닫기] 
+        $('#close').on('click', function() {
+            $('.black-bg').removeClass('show-modal');
+        });
+
+        // 검정색 배경 클릭 시 로그인 모달창 닫기
+        // $('.black-bg').on('click', function() {
+        //     $('.black-bg').removeClass('show-modal');
+        // });
+        
+
+        // 로그인 모달-[전송]
+        
+        // [전송]이벤트 방법1
+        // $('#send').on('click', function() {
+        // })
+
+        // [전송]이벤트 방법2 폼태그 + 이벤트명 
+        $('form').on('submit', function(e) {
+            let inputId = document.getElementById('email').value;
+            let inputPw = document.getElementById('password').value;
+
+            if(inputId == '') {
+                alert('아이디를 입력해주세요.')
+                // 폼 전송 막기
+                e.preventDefault();
+            } else if(!/\S+@\S+\.\S+/.test(inputId)) {
+                alert('이메일 형식을 확인해주세요.')
+                e.preventDefault();
+            } else if(inputPw == '') {
+                alert('비밀번호를 입력해주세요.')
+                e.preventDefault();
+            } else if(inputPw < 6) {
+                alert('비밀번호는 6자리 이상으로 입력해주세요.')
+                e.preventDefault();
+            } else if(/[A-Z]/.test(inputPw)==false) {
+                alert('비밀번호는 영어 대문자가 1개 이상 포함되어야합니다.')
+                e.preventDefault();
+            }
+        });
+
+        // dark/light 이벤트
+        let count = 0;
+
+        $('.badge').on('click', function() {
+            count += 1;
+            if(count % 2 == 1) {
+                // document.getElementsByClassName('.badge').innerHTML = Light;
+                // jquery 
+                $('.badge').html('Light 🔄')
+                .css('color', 'black')
+                .removeClass('bg-dark')
+                .addClass('bg-light');
+
+                $('.main')
+                .removeClass('light')
+                .addClass('dark');
+
+               
+            } else {
+                // document.getElementsByClassName('.badge').innerHTML = Dark;
+
+                // jquery
+                $('.badge').html('Dark 🔄')
+                .css('color', 'white')
+                .addClass('bg-dark');
+                
+                $('.main')
+                .removeClass('dark')
+                .addClass('light');
+
+            }
+        });
+        
+    </script>
+
+    <div class="lorem" style="width: 200px; height: 100px; overflow-y: scroll">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae voluptas voluptatum minus praesentium fugit debitis at, laborum ipsa itaque placeat sit, excepturi eius. Nostrum perspiciatis, eligendi quae consectetur praesentium exercitationem.
+    </div> 
+    <script>
+        // div의 스크롤바 내린양 == div의 실제 높이
+        // document.querySelector('.lorem').addEventListener
+
+        // jQuery표현
+        $('.lorem').on('scroll', function() {
+            // 스크롤 이동 사이즈 확인
+            var scroll = document.querySelector('.lorem').scrollTop;
+
+            // <div>의 실제 높이 확인 셀렉터.scrollHeight
+            var realHeight =  document.querySelector('.lorem').scrollHeight;
+
+            // 눈에 보이는 div 높이
+            var height = document.querySelector('.lorem').clientHeight;
+
+            console.log("scroll: " + scroll + ", height: " + height + ", realHeight: " + realHeight);
+
+            if(scroll + height >= realHeight - 10) {
+                alert('약관을 모두 읽었어요.');
+            }
+        })
+    </script>
+
+    <div style="height: 1000px"> </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+</body>
+
+</html>
