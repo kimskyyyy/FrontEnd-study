@@ -1,0 +1,19 @@
+/* 긴 배경에 카드를 세로로 3개 배치 */
+.card-background {
+    height: 3000px;
+    margin-top: 800px;
+    margin-bottom: 1600px;
+  }
+  
+  .card-box img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+  }
+
+  /* position: sticky를 이용해서 스크롤시 화면에 고정되게 함 */
+  .card-box {
+    position: sticky;
+    top: 400px;
+    margin-top: 200px;
+  }
