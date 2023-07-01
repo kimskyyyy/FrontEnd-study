@@ -6,10 +6,12 @@ import bg from './bg.png';
 import data from './data';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './routes/Detail';
+import axios from 'axios';
+
 
 function App() {
 
-  let [shoes] = useState(data);
+  let [shoes, setShoes] = useState(data);
   let navigate = useNavigate();
 
 
@@ -64,7 +66,18 @@ function App() {
 
 
 
-     <Button variant="warning">Warning</Button>{' '}
+     <Button variant="warning" onClick={() => {
+      axios.get('https://codingapple1.github.io/shop/data2.json')
+      .then((result) => {
+        console.log(result.data)
+        let copy = [...shoes, ...result.data];
+        setShoes(copy);
+
+      })
+      .catch(() => {
+        console.log('요청 실패')
+      })
+     }}>상품 더보기</Button>{' '}
 
     
 

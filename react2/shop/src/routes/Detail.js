@@ -3,6 +3,7 @@
 import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 import { useEffect, useState } from "react";
+import { Nav } from 'react-bootstrap';
 
 let SkyBtn = styled.button`
     background : ${ props => props.bg };
@@ -22,6 +23,15 @@ function Detail(props) {
     let [count, setCount] = useState(0);
     let [time, setTime] = useState(true);
     let [num, setNum] = useState('');
+    let [tab, setTab] = useState(0);
+    let [fade2, setFade2] = useState('');
+
+    useEffect(()=>{
+        setFade2('end')
+        return ()=>{
+          setFade2('')
+        }
+      },[])
 
 
     useEffect(() => {
@@ -41,8 +51,10 @@ function Detail(props) {
         }
     }, [num])
 
+    
+
     return (
-        <div className="container">
+        <div className={'container start ' + fade2}>
             {
                 time == true 
                 ? <div className="alert alert-warning">
@@ -67,8 +79,77 @@ function Detail(props) {
                     <button className="btn btn-danger">주문하기</button> 
                 </div>
             </div>
+
+
+
+            <Nav variant="tabs"  defaultActiveKey="link0">
+                <Nav.Item>
+                <Nav.Link eventKey="link0" onClick={() => {setTab(0)}}>버튼0</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                <Nav.Link eventKey="link1" onClick={() => {setTab(1)}}>버튼1</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                <Nav.Link eventKey="link2" onClick={() => {setTab(2)}}>버튼2</Nav.Link>
+                </Nav.Item>
+            </Nav>
+
+            <TabContent shoes={props.shoes} tab={tab}/>
+
+        
+
             </div> 
     )
 }
+
+// function TabContent(props) {
+//     if(props.tab == 0) {
+//         return <div>내용0</div>
+//     }
+//     if(props.tab == 1) {
+//         return <div>내용1</div>
+//     }
+//     if(props.tab == 2) {
+//         return <div>내용2</div>
+//     }
+// }
+
+//  props.tab을 짧게 쓰려면
+// function TabContent({tab}) {
+//     if(tab == 0) {
+//         return <div>내용0</div>
+//     }
+//     if(tab == 1) {
+//         return <div>내용1</div>
+//     }
+//     if(tab == 2) {
+//         return <div>내용2</div>
+//     }
+// }
+
+
+//  if문 안쓰고 코드 짜기 
+function TabContent({tab, shoes}) {
+
+    let [fade, setFade] = useState('');
+
+
+    useEffect(() => {
+        setTimeout(() => {setFade('end')},100)
+
+        return () => {
+            setFade('')
+        }
+    }, [tab])
+
+    return (
+        <div className={`start ${fade}`}>
+            { [<div>{shoes[0].title}</div>, <div>내용1</div>, <div>내용2</div>][tab]}
+        </div>
+    )
+   
+}
+
+
 
 export default Detail;
